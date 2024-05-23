@@ -68,20 +68,20 @@ const Signup = () => {
 
 
         <div className="firstname relative mb-[2rem]">
-            <input  type="text" placeholder='Johnson doe' className='p-4  px-[4rem] w-full   bx ' />
-            <span className='absolute left-[2rem] top-4'>
+            <input  type="text" placeholder='Johnson doe' className='p-4  px-[3rem] w-full   bx ' />
+            <span className='absolute left-[.8rem] top-4'>
          <RiUser3Line className='text-[25px]  opacity-50' />
             </span>
         </div>
         <div className="firstname relative mb-[2rem]">
-            <input  type="email" placeholder='example@email.com' className='p-4  px-[4rem] w-full   bx ' />
-            <span className='absolute left-[2rem] top-4'>
+            <input  type="email" placeholder='example@email.com' className='p-4  px-[3rem] w-full   bx ' />
+            <span className='absolute left-[.8rem] top-[1.2rem]'>
          <HiOutlineMail className='text-[25px] opacity-50' />
             </span>
         </div>
         <div className="firstname relative mb-[2rem]">
-            <input  type={showPassword ? "text" : "password"}  placeholder='*********' className='p-4  px-[4rem] w-full   bx ' />
-            <span className='absolute left-[2rem] top-4'>
+            <input  type={showPassword ? "text" : "password"}  placeholder='*********' className='p-4  px-[3rem] w-full   bx ' />
+            <span className='absolute left-[.8rem] top-4'>
          <IoLockClosedOutline  className='text-[25px] opacity-50' />
             </span>
             <span className='absolute right-[2rem] top-4'>
