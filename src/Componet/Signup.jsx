@@ -37,7 +37,7 @@ const Signup = () => {
            </section>
         </figure>
 
-        <figcaption className="signupInput w-[70%] h-[100vh] border  bg-[#EEF0F3] g-red-500">
+        <figcaption className="signupInput w-[70%] h-[120vh] border  bg-[#EEF0F3] g-red-500">
 <section className="formContainer">
     <section className="flex justify-between px-6 mt-5">
         <span className='flex'>
@@ -51,7 +51,7 @@ const Signup = () => {
 
     {/* form */}
 
-    <section className="formGeneral flex justify-center items-center h-[90vh]">
+    <section className="formGeneral flex justify-center items-center h-[100vh]">
 
    
 
