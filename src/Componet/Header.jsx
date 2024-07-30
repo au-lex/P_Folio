@@ -13,10 +13,10 @@ const Header = () => {
              <span className='pt-2'><GoDotFill className ="text-[#EA6E54]  animate-bounce" /></span> </h1>
     </div>
 
-    <div className="meune flex space-x-5">
+    <div className="meune flex space-x-[2.5rem]">
         
-       <span><FaGithubSquare className=' cursor-pointer flex text-zinc-900 text-[1.4rem] font-bold' /></span> 
-       <span className=''><FiMenu  className=' cursor-pointer flex text-zinc-900 text-[1.4rem] font-bold' /></span> 
+       <span><FaGithubSquare className=' cursor-pointer flex text-zinc-900 text-[1.6rem] font-bold' /></span> 
+       <span className=''><FiMenu  className=' cursor-pointer flex text-zinc-900 text-[1.6rem] font-bold' /></span> 
     </div>
 </section>
     </>
