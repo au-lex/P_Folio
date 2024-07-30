@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from '../Componet/Header'
 import Hero from '../Componet/Hero'
+import AboutMe from '../Componet/About'
+import SkillSet from '../Componet/Skill'
 
 const LandingPage = () => {
   return (
@@ -8,6 +10,8 @@ const LandingPage = () => {
     
     <Header />
     <Hero />
+    <AboutMe />
+    <SkillSet />
     
     </>
   )
