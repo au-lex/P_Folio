@@ -18,15 +18,15 @@ body {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  /* background: #EA6E54; */
-  border: 5px solid #FFB6A3;
+  background: #EA6E54;
+  /* border: 5px solid #FFB6A3; */
   box-shadow:
     0 0 5px #EA6E54,
     0 0 10px #EA6E54,
-    0 0 20px #EA6E54,
+    /* 0 0 20px #EA6E54, */
     0 0 40px #EA6E54,
-    0 0 80px #EA6E54,
-    inset 0 0 10px #FFB6A3;
+    0 0 80px #EA6E54;
+    /* inset 0 0 10px #FFB6A3; */
   transition: transform 0.3s;
 }
 
