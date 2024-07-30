@@ -5,15 +5,38 @@
 
 
 body {
-  
-    font-family: "Zen Kaku Gothic Antique", sans-serif;
+  background-color: #121F28;
+    /* font-family: "Zen Kaku Gothic Antique", sans-serif; */
+    font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
    
 }
 
-.bg {
-  background-image: url( "https://res.cloudinary.com/dytlpvw1o/image/upload/v1716454249/side-left_trz2xm.png");
-  background-size: cover;
-  height: 120vh;
-  width: 30%;
-  
+
+.neon-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  /* background: #EA6E54; */
+  border: 5px solid #FFB6A3;
+  box-shadow:
+    0 0 5px #EA6E54,
+    0 0 10px #EA6E54,
+    0 0 20px #EA6E54,
+    0 0 40px #EA6E54,
+    0 0 80px #EA6E54,
+    inset 0 0 10px #FFB6A3;
+  transition: transform 0.3s;
 }
+
+.neon-circle:hover {
+  transform: scale(1.1);
+}
+
+
+
+.logo {
+  font-family: "Playwrite AT", cursive;
+}
+
+
