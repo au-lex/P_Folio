@@ -29,7 +29,7 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed top-[3.6rem] right-0 h-full w-full bg-white shadow-lg z-50"
+          className="fixed top-[3.6rem] right-0 h-full w-full bg-white shadow-lg z-50 border"
           variants={menuVariants}
           initial="closed"
           animate="open"
