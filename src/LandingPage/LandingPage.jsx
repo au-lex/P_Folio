@@ -14,7 +14,7 @@ const LandingPage = () => {
     <Hero />
     <AboutMe />
     <SkillSet />
-    {/* <Projects /> */}
+    <Projects />
     <Footer />
     
     </>

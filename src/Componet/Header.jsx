@@ -7,9 +7,9 @@ import { FiMenu } from "react-icons/fi";
 const Header = () => {
   return (
     <>
-<section className="mainHeader bor z-50 shadow bo border-[#EA6E54] bg-white flex justify-between items-center px-4 e h-[3rem] fixed w-full  ">
+<section className="mainHeader bor z-50 shadow bo border-[#EA6E54] bg-white flex justify-between items-center px-4 e h-[3.6rem] fixed w-full  ">
     <div className="">
-        <h1 className=' flex text-zinc-900 text-[1.4rem] logo font-bold'>Aulex
+        <h1 className=' flex text-zinc-900 text-[1.4rem] logo   font-extrabold'>Aulex
              <span className='pt-2'><GoDotFill className ="text-[#EA6E54]  animate-bounce" /></span> </h1>
     </div>
 

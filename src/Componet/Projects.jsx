@@ -5,10 +5,10 @@ const projects = [
   {
     title: "Project 1",
     description: "A brief description of Project 1. This could be a web app, mobile app, or any other software project.",
-    tags: ["React", "Node.js", "MongoDB"],
+    tags: ["React", "Node.js", "MongoDB","tailwind","redux"],
     github: "https://github.com/your-profile/project1",
     live: "https://project1-demo.com",
-    image: "https://placehold.co/600x400"
+    image: "https://i.pinimg.com/236x/21/57/59/215759d88965748c62dfa172f8a0c504.jpg"
   },
   {
     title: "Project 2",
@@ -30,41 +30,41 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="py-20 bg-gray-100">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold  mb-4">My Projects</h2>
-        <p className=" text-gray-600 mb-12">Here are some of the projects I've worked on. Hover to learn more!</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div key={index} className="bg-white border  rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-              <div className="p-6">
+    <section className="py-20 bg-white">
+    <div className="container mx-auto px-4">
+      <h2 className="text-3xl font-bold mb-2">My Projects</h2>
+      <p className="text-gray-600 mb-4">Here are some of the projects I've worked on. Hover to learn more!</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project, index) => (
+          <div key={index} className="bg-white p-2 border border-[#EA6E54] h-[13rem] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <section className="flex w-full justify-between">
+              <figure className="projectImg w-[40%] mr-2">
+                <img src={project.image} alt={project.title}
+                  className="w-[140px] h-[140px] rounded-md object-cover" />
+              </figure>
+              <div className="w-[60%]">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="text-xs bg-[#EA6E54] text-white px-2 py-1 rounded">{tag}</span>
-                  ))}
-                </div>
-                <div className="flex justify-between items-center">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-[#EA6E54] hover:text-[#d55c45]">
-                    <FaGithub size={24} />
+                <p className="text-gray-600 mb-4 text-[12px]">{project.description}</p>
+                <div className="flex items-center space-x-6 mt-2 mb-2">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#EA6E54]">
+                    <FaGithub size={20} />
                   </a>
-                  {/* <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-[#EA6E54] hover:text-[#d55c45]">
-                    <FaExternalLinkAlt size={24} />
-                  </a> */}
+                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#EA6E54]">
+                    <FaExternalLinkAlt size={18} />
+                  </a>
                 </div>
               </div>
+            </section>
+            <div className="flex flex-wrap gap-1 justify-start mt-[.5rem]">
+              {project.tags.map((tag, tagIndex) => (
+                <span key={tagIndex} className="text-xs bg-[#EA6E54] text-white px-2 py-1 rounded">{tag}</span>
+              ))}
             </div>
-          ))}
-        </div>
-        <div className="text-center mt-12">
-          <a href="#" className="inline-block bg-[#EA6E54] text-white py-3 px-8 rounded-full font-bold hover:bg-[#d55c45] transition-colors">
-            View All Projects
-          </a>
-        </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
+  </section>
   );
 };
 
