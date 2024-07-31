@@ -13,6 +13,23 @@ const socialLinks = [
 const Hero = () => {
   return (
     <section className="hero pt-[8rem] relative overflow-hidden px-4 md:px-6 lg:px-8">
+ <div className="absolute inset-0 -z-10">
+        {[...Array(30)].map((_, index) => (
+          <div
+            key={index}
+            className="absolute rounded-full border border-[#EA6E54] opacity-10 animate-float"
+            style={{
+              width: `${Math.random() * 10 + 5}px`,
+              height: `${Math.random() * 10 + 5}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDuration: `${Math.random() * 10 + 10}s`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          ></div>
+        ))}
+      </div>
+
       <h1 className='text-white text-center text-[1rem] flex justify-center items-center'>
         Hello <GoDotFill className="text-[#EA6E54] ml-1" />
       </h1>
@@ -50,7 +67,7 @@ const Hero = () => {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 border-2 border-[#EA6E54] rounded-full text-[#EA6E54] hover:text-white hover:bg-[#EA6E54] transition-colors"
+            className="flex items-center justify-center w-12 h-12 border-2 border-[#EA6E54] rounded-full text-white hover:text-white hover:bg-[#EA6E54] transition-colors"
           >
             {link.icon}
           </a>

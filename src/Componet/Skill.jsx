@@ -22,7 +22,7 @@ const skills = [
 
 const SkillSet = () => {
   return (
-    <div className="p8 px-[1rem] bg-gray-800 pt-[3rem] text-white pb-[2rem]">
+    <div className="p8 px-[1rem]  pt-[3rem] text-white pb-[2rem]">
       <h2 className="text-3xl font-bold text-center mb-8">Skill Set</h2>
       <div className="grid grid-cols-3 md:grid-cols-4 gp-8 gap-3 text-center">
         {skills.map((skill, index) => (
