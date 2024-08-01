@@ -13,7 +13,7 @@ const projects = [
     tags: ["React", "Node.js", "MongoDB", "tailwind", "redux"],
     github: "https://github.com/your-profile/project1",
     live: "https://project1-demo.com",
-    image: "https://i.pinimg.com/236x/21/57/59/215759d88965748c62dfa172f8a0c504.jpg"
+    image: "https://res.cloudinary.com/durbee4ln/image/upload/v1722517392/portifilo/scrnli_8_1_2024_1-56-54_PM_wdvtck.png"
   },
   {
     title: "Project 2",
@@ -21,7 +21,7 @@ const projects = [
     tags: ["Vue.js", "Firebase", "Tailwind CSS"],
     github: "https://github.com/your-profile/project2",
     live: "https://project2-demo.com",
-    image: "https://placehold.co/600x400"
+    image: "https://res.cloudinary.com/durbee4ln/image/upload/v1722517390/portifilo/scrnli_8_1_2024_1-57-26_PM_ikctov.png"
   },
   {
     title: "Project 3",
@@ -29,7 +29,7 @@ const projects = [
     tags: ["Python", "Django", "PostgreSQL"],
     github: "https://github.com/your-profile/project3",
     live: "https://project3-demo.com",
-    image: "https://placehold.co/600x400"
+    image: "https://res.cloudinary.com/durbee4ln/image/upload/v1722517392/portifilo/scrnli_8_1_2024_1-58-07_PM_yiyrcn.png"
   },
   {
     title: "Project 4",
@@ -37,7 +37,7 @@ const projects = [
     tags: ["React Native", "Firebase", "Redux"],
     github: "https://github.com/your-profile/project4",
     live: "https://project4-demo.com",
-    image: "https://placehold.co/600x400"
+    image: "https://res.cloudinary.com/durbee4ln/image/upload/v1722517394/portifilo/scrnli_8_1_2024_1-57-51_PM_ldobe8.png"
   },
   {
     title: "Project 5",
@@ -45,7 +45,7 @@ const projects = [
     tags: ["Python", "TensorFlow", "Pandas"],
     github: "https://github.com/your-profile/project5",
     live: "https://project5-demo.com",
-    image: "https://placehold.co/600x400"
+    image: "https://res.cloudinary.com/durbee4ln/image/upload/v1722517394/portifilo/scrnli_8_1_2024_1-58-24_PM_f7c5ka.png"
   },
   {
     title: "Project 6",
@@ -53,7 +53,7 @@ const projects = [
     tags: ["Angular", "Node.js", "MongoDB"],
     github: "https://github.com/your-profile/project6",
     live: "https://project6-demo.com",
-    image: "https://placehold.co/600x400"
+    image: "https://res.cloudinary.com/durbee4ln/image/upload/v1722517391/portifilo/scrnli_8_1_2024_2-00-14_PM_qgf1ze.png"
   },
   {
     title: "Project 7",
@@ -61,7 +61,7 @@ const projects = [
     tags: ["Solidity", "Ethereum", "Web3.js"],
     github: "https://github.com/your-profile/project7",
     live: "https://project7-demo.com",
-    image: "https://placehold.co/600x400"
+    image: "https://res.cloudinary.com/durbee4ln/image/upload/v1722517391/portifilo/scrnli_8_1_2024_1-58-42_PM_k6qscc.png"
   },
   {
     title: "Project 8",
@@ -69,7 +69,7 @@ const projects = [
     tags: ["Python", "Natural Language Processing", "Flask"],
     github: "https://github.com/your-profile/project8",
     live: "https://project8-demo.com",
-    image: "https://placehold.co/600x400"
+    image: "https://res.cloudinary.com/durbee4ln/image/upload/v1722517390/portifilo/scrnli_8_1_2024_2-00-58_PM_rmjcka.png"
   },
   {
     title: "Project 9",
@@ -85,7 +85,7 @@ const projects = [
     tags: ["Raspberry Pi", "Python", "React Native"],
     github: "https://github.com/your-profile/project10",
     live: "https://project10-demo.com",
-    image: "https://placehold.co/600x400"
+    image: "https://res.cloudinary.com/durbee4ln/image/upload/v1722517390/portifilo/scrnli_8_1_2024_1-58-58_PM_tdr2uv.png"
   }
 ];
 
@@ -127,7 +127,7 @@ const Projects = () => {
           {currentProjects.map((project, index) => (
             <div key={index} className="bg-white p-2 border border-[#EA6E54] h-[13rem] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
               <section className="flex w-full justify-between">
-                <figure className="projectImg w-[40%] mr-2">
+                <figure className="projectImg w-[40%] border border-[#EA6E54] rounded-md mr-2">
                   <img src={project.image} alt={project.title}
                     className="w-[140px] h-[140px] rounded-md object-cover" />
                 </figure>
