@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { FiHome, FiUser, FiBriefcase, FiMail, FiX } from 'react-icons/fi';
+import { FiHome, FiUser, FiBriefcase, FiMail, FiMenu, FiX } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GoDotFill } from "react-icons/go";
-import { FaGithubSquare } from "react-icons/fa"
-import { FiMenu } from "react-icons/fi";
+import { FaGithubSquare } from "react-icons/fa";
 
 const SideMenu = ({ isOpen, toggleMenu }) => {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -29,15 +28,14 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed top-[3.6rem] right-0 h-full w-full bg-white shadow-lg z-50 border"
+          className="fixed top-[3.6rem] right-0 h-full w-full md:w-64 bg-white shadow-lg z-50 border"
           variants={menuVariants}
           initial="closed"
           animate="open"
           exit="closed"
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         >
-       
-          <nav className="flex flex-col h-ull pt-4 justify-center">
+          <nav className="flex flex-col h-full\\ pt-4 justify-center">
             {menuItems.map((item, index) => (
               <motion.div
                 key={item.text}
@@ -54,7 +52,7 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
                 <AnimatePresence>
                   {hoveredItem === index && (
                     <motion.div
-                      className="absolute left-0 top-0 bottom-0 bg-gray-100"
+                      className="absolute left-0 top-0 bottom-0 bg-gay-100"
                       initial={{ width: 0 }}
                       animate={{ width: '100%' }}
                       exit={{ width: 0 }}
@@ -81,21 +79,25 @@ const Header = () => {
 
   return (
     <>
-      <section className="mainHeader bor z-50 shadow bo border-[#EA6E54] bg-white flex justify-between items-center px-4 e h-[3.6rem] fixed w-full">
+      <section className="mainHeader z-50 shadow border-b border-[#EA6E54] bg-white flex justify-between items-center px-4 h-[3.6rem] fixed w-full">
         <div className="">
-          <h1 className='flex text-zinc-900 text-[1.4rem] logo font-extrabold'>
+          <h1 className='flex text-zinc-900 text-[1.2rem] sm:text-[1.4rem] logo font-extrabold'>
             Aulex
             <span className='pt-2'>
               <GoDotFill className="text-[#EA6E54] animate-bounce" />
             </span>
           </h1>
         </div>
-        <div className="meune flex space-x-[2.5rem]">
-          <span>
-            <FaGithubSquare className='cursor-pointer flex text-zinc-900 text-[1.7rem] font-bold' />
+        <div className="menu flex items-center space-x-8 sm:space-x-[2.5rem]">
+          <span className="hism:inline">
+            <FaGithubSquare className='cursor-pointer text-zinc-900 text-[1.5rem] sm:text-[1.7rem] font-bold' />
           </span>
           <span className='' onClick={toggleMenu}>
-            <FiMenu className='cursor-pointer flex text-zinc-900 text-[1.7rem] font-bold' />
+            {isMenuOpen ? (
+              <FiX className='cursor-pointer text-zinc-900 text-[1.5rem] sm:text-[1.7rem] font-bold' />
+            ) : (
+              <FiMenu className='cursor-pointer text-zinc-900 text-[1.5rem] sm:text-[1.7rem] font-bold' />
+            )}
           </span>
         </div>
       </section>
