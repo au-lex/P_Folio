@@ -9,7 +9,7 @@ import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'reac
 const projects = [
   {
     title: "Project 1",
-    description: "A brief description of Project 1. This could be a web app, mobile app, or any other software project.",
+    description: "A brief description of Project 1. This could be a web app, mobile app, .",
     tags: ["React", "Node.js", "MongoDB", "tailwind", "redux"],
     github: "https://github.com/your-profile/project1",
     live: "https://project1-demo.com",
@@ -17,7 +17,7 @@ const projects = [
   },
   {
     title: "Project 2",
-    description: "Description of Project 2. Highlight the key features and technologies used.",
+    description: "Description of Project 2. Highlight the key features  and technologies used.",
     tags: ["Vue.js", "Firebase", "Tailwind CSS"],
     github: "https://github.com/your-profile/project2",
     live: "https://project2-demo.com",
@@ -98,7 +98,7 @@ const Loader = () => (
 const Projects = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const projectsPerPage = 3;
+  const projectsPerPage = 4;
 
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
@@ -123,9 +123,9 @@ const Projects = () => {
         {loading ? (
           <Loader />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {currentProjects.map((project, index) => (
-            <div key={index} className="bg-white p-2 border border-[#EA6E54] h-[13rem] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div key={index} className="bg-white p-2 border  border-[#EA6E54]  h-[14rem]  rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
               <section className="flex w-full justify-between">
                 <figure className="projectImg w-[40%] border border-[#EA6E54] rounded-md mr-2">
                   <img src={project.image} alt={project.title}
@@ -134,14 +134,38 @@ const Projects = () => {
                 <div className="w-[60%]">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-gray-600 mb-4 text-[12px]">{project.description}</p>
-                  <div className="flex items-center space-x-6 mt-2 mb-2">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#EA6E54]">
-                      <FaGithub size={20} />
-                    </a>
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#EA6E54]">
-                      <FaExternalLinkAlt size={18} />
-                    </a>
-                  </div>
+                  <div className="flex items-center space-x-4 mt-2 mb-2">
+  <a 
+    href={project.github} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="relative group"
+    aria-label="View GitHub Repository"
+  >
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#EA6E54] to-[#F3A183] rounded-full opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
+    <div className="relative flex items-center justify-center h-8 w-8 bg-white rounded-full border-2 border-[#EA6E54] transition-all duration-300 ease-in-out group-hover:rotate-6 group-hover:scale-110">
+      <FaGithub size={20} className="text-[#EA6E54] group-hover:text-[#121F28]" />
+    </div>
+    <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 bg-[#121F28] text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+      GitHub
+    </span>
+  </a>
+  <a 
+    href={project.live} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="relative group"
+    aria-label="View Live Demo"
+  >
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#EA6E54] to-[#F3A183] rounded-full opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
+    <div className="relative flex items-center justify-center h-8 w-8 bg-white rounded-full border-2 border-[#EA6E54] transition-all duration-300 ease-in-out group-hover:-rotate-6 group-hover:scale-110">
+      <FaExternalLinkAlt size={16} className="text-[#EA6E54] group-hover:text-[#121F28]" />
+    </div>
+    <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 bg-[#121F28] text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+      Live Demo
+    </span>
+  </a>
+</div>
                 </div>
               </section>
               <div className="flex flex-wrap gap-1 justify-start mt-[.5rem]">

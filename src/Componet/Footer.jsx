@@ -10,6 +10,14 @@ const socialLinks = [
   { href: "mailto:your-email@example.com", icon: <FaEnvelope /> }
 ];
 
+const quickLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "Contact", href: "/contact" }
+];
+
 const Footer = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -23,26 +31,38 @@ const Footer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a server
     console.log('Form submitted:', formData);
-    // Reset form after submission
     setFormData({ name: '', email: '', message: '' });
   };
 
   return (
     <footer className="bg[#121F28] text-white py-12 px-4 md:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About Section */}
-          <div className="">
+          <div>
             <h1 className='flex text-zinc-100 text-[1.4rem] logo font-bold'>
               Aulex
               <span className='pt-2'><GoDotFill className="text-[#EA6E54] animate-bounce" /></span>
             </h1>
-            <div className="mb">
-              <h2 className="text-2">Let's Connect</h2>
-              <p className="text-gray-300 mt-">Reach out for collaborations or just to say hi!</p>
+            <div className="mb-4">
+              <h2 className="text-2xl">Let's Connect</h2>
+              <p className="text-gray-300 mt-2">Reach out for collaborations or just to say hi!</p>
             </div>
+          </div>
+
+          {/* Quick Links Section */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+            <ul>
+              {quickLinks.map((link, index) => (
+                <li key={index} className="mb-2">
+                  <a href={link.href} className="text-gray-300 hover:text-[#EA6E54] transition-colors">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contact Form */}
@@ -92,8 +112,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="mt-8 flex justify-center space-x-4">
           {socialLinks.map((link, index) => (
-            
-              <a key={index}
+            <a key={index}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
