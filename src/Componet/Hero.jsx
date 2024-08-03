@@ -37,17 +37,21 @@ const Hero = () => {
               Hello <GoDotFill className="text-[#EA6E54] ml-1" />
             </h1>
             <h1 className='text-white text-center lg:text-left text-2xl sm:text-3xl -2'>I'm Aulex</h1>
-            <div className="flex justify-center lg:justify-start mt-2">
-              <span className='bg-[#EA6E54] w-20 sm:w-24 h-[2px]'></span>
+            <div className="flex justify-center lg:justify-start mt-">
+              <span className='bg-[#EA6E54] border border-dashed w-20 sm:w-24 h-[2px]'></span>
             </div>
             <h1 className='text-white text-center lg:text-left text-2xl sm:text-3xl font-bold mt-2'>SOFTWARE DEVELOPER</h1>
+               <div className="border flex justify-center px-[8rem]">
+
+        <span className='bg-[#EA6E54] flex justify-center w-[100%] h-[2px]'></span>
+        </div>
             <p className='text-white text-center hidden lg:block lg:text-left mt-4 max-w-2xl'>
               
               Breathing life into pixels and code.
   Crafting immersive digital experiences that engage and inspire.
   From concept to creation, bringing visions to virtual reality.
               </p>
-            <p className='text-white text-center lg:hidden block mt-4 max-w-2xl'>
+            <p className='text-white text-center lg:hidden block mt-1 max-w-2xl'>
               
             Breathing life into pixels and code.
 {/* Crafting immersive digital experiences that engage and inspire. */}
