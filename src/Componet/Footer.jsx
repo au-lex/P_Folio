@@ -3,11 +3,11 @@ import { GoDotFill } from "react-icons/go";
 import { FaLinkedin, FaTwitter, FaInstagram, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const socialLinks = [
-  { href: "https://www.linkedin.com/in/your-profile", icon: <FaLinkedin /> },
-  { href: "https://twitter.com/your-profile", icon: <FaTwitter /> },
-  { href: "https://www.instagram.com/your-profile", icon: <FaInstagram /> },
-  { href: "https://github.com/your-profile", icon: <FaGithub /> },
-  { href: "mailto:your-email@example.com", icon: <FaEnvelope /> }
+  { href: "https://www.linkedin.com/in/boniface-ifebuche-aulex-467a74247/", icon: <FaLinkedin /> },
+  { href: "https://x.com/Aulex_0", icon: <FaTwitter /> },
+  { href: "https://www.instagram.com/aul__ex/", icon: <FaInstagram /> },
+  { href: "https://github.com/au-lex?tab=repositories", icon: <FaGithub /> },
+  { href: "mailto:aulex500@gmail.com", icon: <FaEnvelope /> }
 ];
 
 const quickLinks = [
@@ -36,7 +36,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg[#121F28] text-white py-12 px-4 md:px-6 lg:px-8">
+    <footer id='contact' className="bg[#121F28] text-white py-12 px-4 md:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About Section */}
@@ -52,7 +52,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links Section */}
-          <div>
+          <div className='hidden lg:block'>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul>
               {quickLinks.map((link, index) => (

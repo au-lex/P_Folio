@@ -1,3 +1,13 @@
+
+
+
+* {
+  scroll-padding-top: 1rem;
+  scroll-behavior: smooth;
+  /* overflow-x: hidden; */
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

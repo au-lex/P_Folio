@@ -8,10 +8,10 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const menuItems = [
-    { icon: FiHome, text: 'Home', color: '#EA6E54' },
-    { icon: FiUser, text: 'About', color: '#4A90E2' },
-    { icon: FiBriefcase, text: 'Projects', color: '#50C878' },
-    { icon: FiMail, text: 'Contact', color: '#9B59B6' },
+    { icon: FiHome, text: 'Home', color: '#EA6E54', href: '#home' },
+    { icon: FiUser, text: 'About', color: '#4A90E2', href: '#about' },
+    { icon: FiBriefcase, text: 'Projects', color: '#50C878', href: '#projects' },
+    { icon: FiMail, text: 'Contact', color: '#9B59B6', href: '#contact' },
   ];
 
   const menuVariants = {
@@ -28,31 +28,33 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed top-[3.6rem] right-0 h-full w-full md:w-64 bg-white shadow-lg z-50 border"
+          className="fixed  top-[3.6rem] right-0 h-full w-full md:w-[20%]  bg-white shadow-lg z-50 border"
           variants={menuVariants}
           initial="closed"
           animate="open"
           exit="closed"
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         >
-          <nav className="flex flex-col h-full\\ pt-4 justify-center">
+          <nav className="flex flex-col pt-4 justify-center">
             {menuItems.map((item, index) => (
-              <motion.div
+              <motion.a
                 key={item.text}
+                href={item.href}
                 className="relative py-4 px-6 cursor-pointer"
                 variants={itemVariants}
                 transition={{ delay: index * 0.1 }}
                 onHoverStart={() => setHoveredItem(index)}
                 onHoverEnd={() => setHoveredItem(null)}
+                onClick={toggleMenu} // Close menu when a link is clicked
               >
-                <div className="flex itemscenter space-x-4">
+                <div className="flex items-center space-x-4">
                   <item.icon size={24} color={item.color} />
                   <span className="text-lg font-semibold">{item.text}</span>
                 </div>
                 <AnimatePresence>
                   {hoveredItem === index && (
                     <motion.div
-                      className="absolute left-0 top-0 bottom-0 bg-gay-100"
+                      className="absolute left-0 top-0 bottom-0 bg-gray-100"
                       initial={{ width: 0 }}
                       animate={{ width: '100%' }}
                       exit={{ width: 0 }}
@@ -61,7 +63,7 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
                     />
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </motion.a>
             ))}
           </nav>
         </motion.div>
@@ -89,9 +91,9 @@ const Header = () => {
           </h1>
         </div>
         <div className="menu flex items-center space-x-8 sm:space-x-[2.5rem]">
-          <span className="hism:inline">
-            <FaGithubSquare className='cursor-pointer text-zinc-900 text-[1.5rem] sm:text-[1.7rem] font-bold' />
-          </span>
+          <a href='https://github.com/au-lex?tab=repositories' target='_blank' className="block">
+            <FaGithubSquare  className='cursor-pointer text-zinc-900 text-[1.5rem] sm:text-[1.7rem] font-bold' />
+          </a>
           <span className='' onClick={toggleMenu}>
             {isMenuOpen ? (
               <FiX className='cursor-pointer text-zinc-900 text-[1.5rem] sm:text-[1.7rem] font-bold' />
