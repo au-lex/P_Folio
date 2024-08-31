@@ -118,7 +118,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section id='projects' className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-2">My Projects</h2>
         <p className="text-gray-600 mb-4">Here are some of the projects I've worked on. Hover to learn more!</p>
