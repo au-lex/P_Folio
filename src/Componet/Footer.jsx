@@ -139,7 +139,7 @@ const Footer = () => {
               </div>
               {/* submit button */}
               <button type="submit" className="bg-gradient-to-r from-[#EA6E54] to-[#F3A183] text-white px-6 py-3 rounded-lg w-full hover:from-[#F3A183] hover:to-[#EA6E54] transition-all duration-300 flex items-center justify-center group">
-                <span className="mr-2">{isLoading ? "Loading..." : "Send Message"}</span>
+                <span className="mr-2">{isLoading ? "Sending..." : "Send Message"}</span>
                 <FaPaperPlane className="transform group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </form>
