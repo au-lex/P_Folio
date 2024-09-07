@@ -13,7 +13,7 @@ const socialLinks = [
 
 const Hero = () => {
   return (
-    <section id='home' className="heo pt-16 sm:pt-24 md:pt-32 relative  overflow-hidden px-4 sm:px-6 lg:px-8">
+    <section id='home' className="heo  bg-rgradient-to-b from-gray-900 to-gray-800 pt-16 sm:pt-24 md:pt-32 relative  overflow-hidden px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 -z-10">
         {[...Array(30)].map((_, index) => (
           <div
@@ -141,7 +141,9 @@ const Hero = () => {
       </div>
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] lg:w-[]
-       lg:h-[300px] bg-[#EA6E54] rounded-full filter blur-[120px] opacity-20 -z-10"></div>
+       lg:h-[300px] bg-[#EA6E54] rounded-full filter blur-[120px] lg:blur-[250px] opacity-10 lg:opacity-80
+       
+        -z-10"></div>
     </section>
   );
 }
