@@ -3,26 +3,26 @@ import { FaNodeJs, FaReact, FaDatabase, FaHtml5, FaCss3Alt, FaPython, FaGithub }
 import { SiExpress, SiMongodb, SiPostgresql, SiJavascript, SiTypescript, SiTailwindcss, SiNextdotjs, SiFirebase } from 'react-icons/si';
 
 const skills = [
-  { icon: <FaNodeJs className="text-xl text-green-500" />, name: 'Node.js' },
-  { icon: <SiExpress className="text-xl textblack" />, name: 'Express.js' },
-  { icon: <SiMongodb className="text-xl text-green-600" />, name: 'MongoDB' },
+  { icon: <FaNodeJs className="text-4xl text-green-500" />, name: 'Node.js' },
+  { icon: <SiExpress className="text-4xl textblack" />, name: 'Express.js' },
+  { icon: <SiMongodb className="text-4xl text-green-600" />, name: 'MongoDB' },
   // { icon: <SiPostgresql className="text-xxl text-blue-500" />, name: 'PostgreSQL' },
-  { icon: <SiJavascript className="text-xl text-yellow-500" />, name: 'JavaScript' },
-  { icon: <SiTypescript className="text-xl text-blue-500" />, name: 'TypeScript' },
-  { icon: <FaReact className="text-xl text-blue-400" />, name: 'React' },
-  { icon: <SiTailwindcss className="text-xl text-teal-500" />, name: 'Tailwind ' },
-  { icon: <FaHtml5 className="text-xl text-orange-500" />, name: 'HTML5' },
-  { icon: <FaCss3Alt className="text-xl text-blue-600" />, name: 'CSS3' },
+  { icon: <SiJavascript className="text-4xl text-yellow-500" />, name: 'JavaScript' },
+  { icon: <SiTypescript className="text-4xl text-blue-500" />, name: 'TypeScript' },
+  { icon: <FaReact className="text-4xl text-blue-400" />, name: 'React' },
+  { icon: <SiTailwindcss className="text-4xl text-teal-500" />, name: 'Tailwind ' },
+  { icon: <FaHtml5 className="text-4xl text-orange-500" />, name: 'HTML5' },
+  { icon: <FaCss3Alt className="text-4xl text-blue-600" />, name: 'CSS3' },
   // { icon: <FaDatabase className="text-xl text-gray-700" />, name: 'SQL' },
-  { icon: <SiNextdotjs className="text-xl text-wh" />, name: 'Next.js' },
-  { icon: <SiFirebase className="text-xl text-yellow-500" />, name: 'Firebase' },
+  { icon: <SiNextdotjs className="text-4xl text-wh" />, name: 'Next.js' },
+  { icon: <SiFirebase className="text-4xl text-yellow-500" />, name: 'Firebase' },
   // { icon: <FaPython className="text-xxl text-blue-400" />, name: 'Python' },
-  { icon: <FaGithub className="text-xl text-gray[-700" />, name: 'GitHub' },
+  { icon: <FaGithub className="text-4xl text-gray[-700" />, name: 'GitHub' },
 ];
 
 const SkillSet = () => {
   return (
-    <div className="p-8 px-4 lg:px-16 pt-16 pb-16 bg-gradient-to-b from-gray-900 to-gray-800 text-white relative overflow-hidden">
+    <div className="p-8 px-4 pt-6 lg:px-16 lg:pt-16 pb-16 bg-gradient-to-b from-gray-900 to-gray-800 text-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-[1.5rem] lg:text-4xl font-bold lg:text-center mb-4 relative z-10">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#EA6E54] to-[#F3A183]">

@@ -4,6 +4,8 @@ import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight, FaTimes } f
 import { projects } from './ProjectList';
 
 const Loader = () => (
+
+  
   <motion.div 
     className="flex justify-center items-center h-64"
     initial={{ opacity: 0 }}
@@ -34,6 +36,19 @@ const Projects = () => {
     }, 500);
   };
 
+  useEffect(() => {
+   
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
+
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -57,7 +72,7 @@ const Projects = () => {
   };
 
   return (
-    <section id='projects' className="py-20 bg-gradient-to-b from-white to-gray-100">
+    <section id='projects' className=" py-6 lg:py-20 bg-gradient-to-b from-white to-gray-100">
       <div className="container mx-auto px-4 lg:px-[4rem]">
         <motion.h2
           initial={{ y: -20, opacity: 0 }}
