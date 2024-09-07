@@ -81,8 +81,8 @@ const Header = () => {
 
   return (
     <>
-      <section className="mainHeader z-50 shadow border-b
-       border-[#EA6E54] bg-white flex justify-between items-center px-4 lg:px-[4rem] h-[3.6rem] fixed w-full">
+      <section className="mainHeader z-50 shadow border-b   backdrop-blur-[15px]
+       border-[#EA6E54] bg-white flex justify-between items-center px-4 lg:px-[8rem] h-[3.6rem] fixed w-full">
         <div className="">
           <h1 className='flex text-zinc-900 text-[1.2rem] sm:text-[1.4rem] logo font-extrabold'>
             Aulex
