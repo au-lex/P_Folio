@@ -63,7 +63,7 @@ const Projects = () => {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold mb-2 text-center text-[#EA6E54]"
+          className="text-[1.5rem] lg:text-4xl font-bold mb-2 lg:text-center text-[#EA6E54]"
         >
           My Creative Journey
         </motion.h2>
@@ -71,7 +71,7 @@ const Projects = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-gray-700 text-center mb-8 max-w-2xl mx-auto"
+          className="text-gray-700 lg:text-center mb-8 max-w-2xl mx-auto"
         >
           Explore my diverse portfolio, showcasing a fusion of innovation and problem-solving. Each project tells a unique story of challenges conquered and skills mastered. Dive in and discover the technologies that drive my passion!
         </motion.p>
@@ -86,7 +86,7 @@ const Projects = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 "
             >
               {currentProjects.map((project, index) => (
                 <motion.div
@@ -95,9 +95,9 @@ const Projects = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedProject(project)}
-                  className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden transform hover:-rotate-1"
+                  className="bg-white p-4 rounded-lg shadow-lg border border-[#EA6E54] hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden transform hover:-rotate-1"
                 >
-                  <div className="relative h-48 mb-4 overflow-hidden rounded-md">
+                  <div className="relative h-48 mb-4 overflow-hidden border rounded-md">
                     <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" />
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                       <span className="text-white font-bold">Click to view details</span>

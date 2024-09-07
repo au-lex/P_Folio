@@ -13,7 +13,7 @@ const socialLinks = [
 
 const Hero = () => {
   return (
-    <section id='home' className="hero pt-16 sm:pt-24 md:pt-32 relative overflow-hidden px-4 sm:px-6 lg:px-8">
+    <section id='home' className="heo pt-16 sm:pt-24 md:pt-32 relative  overflow-hidden px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 -z-10">
         {[...Array(30)].map((_, index) => (
           <div
@@ -73,7 +73,7 @@ const Hero = () => {
             <figure className='flex lg:hidden justify-center  relative'>
               <div className="image-container relative w-[200px] h-[200px]">
                 <div className="absolute inset-0 bg-[#EA6E54] opacity-20 rounded-full animate-pulse"></div>
-                <div className="absolute inset-2 bg-[#121F28] rounded-full"></div>
+                <div className="absolute inset-2 bg-[#d7d8d8] rounded-full"></div>
                 <img
                   src="https://res.cloudinary.com/durbee4ln/image/upload/v1722374230/rsz_download_prev_ui_mt9xkd.png"
                   className='absolute inset-4 w-[175px] h-[178px] object-cover rounded-full z-10'
@@ -106,7 +106,7 @@ const Hero = () => {
             <div >
               <div className="image-containe  relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
                 <div className="absolute inset-0 bg-[#EA6E54] opacity-20 rounded-full animate-pulse"></div>
-                <div className="absolute inset-2 bg-[#121F28] rounded-full"></div>
+                <div className="absolute inset-2 bg-[#d7d8d8] rounded-full"></div>
 
                 <img
                   src="https://res.cloudinary.com/durbee4ln/image/upload/v1722374230/rsz_download_prev_ui_mt9xkd.png"
@@ -140,7 +140,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] h-[800px] bg-[#EA6E54] rounded-full filter blur-[120px] opacity-20 -z-10"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] lg:w-[]
+       lg:h-[300px] bg-[#EA6E54] rounded-full filter blur-[120px] opacity-20 -z-10"></div>
     </section>
   );
 }

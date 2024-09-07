@@ -1,32 +1,35 @@
 import React from 'react';
-import { FaNodeJs, FaReact, FaHtml5, FaCss3Alt, FaGithub } from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiJavascript, SiTypescript, SiTailwindcss, SiNextdotjs, SiFirebase } from 'react-icons/si';
+import { FaNodeJs, FaReact, FaDatabase, FaHtml5, FaCss3Alt, FaPython, FaGithub } from 'react-icons/fa';
+import { SiExpress, SiMongodb, SiPostgresql, SiJavascript, SiTypescript, SiTailwindcss, SiNextdotjs, SiFirebase } from 'react-icons/si';
 
 const skills = [
-  { icon: <FaNodeJs />, name: 'Node.js', color: 'green-500' },
-  { icon: <SiExpress />, name: 'Express.js', color: 'gray-700' },
-  { icon: <SiMongodb />, name: 'MongoDB', color: 'green-600' },
-  { icon: <SiJavascript />, name: 'JavaScript', color: 'yellow-500' },
-  { icon: <SiTypescript />, name: 'TypeScript', color: 'blue-500' },
-  { icon: <FaReact />, name: 'React', color: 'blue-400' },
-  { icon: <SiTailwindcss />, name: 'Tailwind', color: 'teal-500' },
-  { icon: <FaHtml5 />, name: 'HTML5', color: 'orange-500' },
-  { icon: <FaCss3Alt />, name: 'CSS3', color: 'blue-600' },
-  { icon: <SiNextdotjs />, name: 'Next.js', color: 'white' },
-  { icon: <SiFirebase />, name: 'Firebase', color: 'yellow-500' },
-  { icon: <FaGithub />, name: 'GitHub', color: 'gray-700' },
+  { icon: <FaNodeJs className="text-xl text-green-500" />, name: 'Node.js' },
+  { icon: <SiExpress className="text-xl textblack" />, name: 'Express.js' },
+  { icon: <SiMongodb className="text-xl text-green-600" />, name: 'MongoDB' },
+  // { icon: <SiPostgresql className="text-xxl text-blue-500" />, name: 'PostgreSQL' },
+  { icon: <SiJavascript className="text-xl text-yellow-500" />, name: 'JavaScript' },
+  { icon: <SiTypescript className="text-xl text-blue-500" />, name: 'TypeScript' },
+  { icon: <FaReact className="text-xl text-blue-400" />, name: 'React' },
+  { icon: <SiTailwindcss className="text-xl text-teal-500" />, name: 'Tailwind ' },
+  { icon: <FaHtml5 className="text-xl text-orange-500" />, name: 'HTML5' },
+  { icon: <FaCss3Alt className="text-xl text-blue-600" />, name: 'CSS3' },
+  // { icon: <FaDatabase className="text-xl text-gray-700" />, name: 'SQL' },
+  { icon: <SiNextdotjs className="text-xl text-wh" />, name: 'Next.js' },
+  { icon: <SiFirebase className="text-xl text-yellow-500" />, name: 'Firebase' },
+  // { icon: <FaPython className="text-xxl text-blue-400" />, name: 'Python' },
+  { icon: <FaGithub className="text-xl text-gray[-700" />, name: 'GitHub' },
 ];
 
 const SkillSet = () => {
   return (
     <div className="p-8 px-4 lg:px-16 pt-16 pb-16 bg-gradient-to-b from-gray-900 to-gray-800 text-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4 relative z-10">
+        <h2 className="text-[1.5rem] lg:text-4xl font-bold lg:text-center mb-4 relative z-10">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#EA6E54] to-[#F3A183]">
             Skill Set
           </span>
         </h2>
-        <p className="text-center mt-2 mb-12 text-gray-300 max-w-2xl mx-auto relative z-10">
+        <p className="lg:text-center mt-2 mb-12 text-gray-300 max-w-2xl mx-auto relative z-10">
           These skills represent the core areas of expertise I have developed over time. Each skill is complemented by hands-on experience and continuous learning to stay up-to-date with industry trends.
         </p>
 
@@ -46,7 +49,7 @@ const SkillSet = () => {
         </div>
       </div>
 
-      {/* Background decorations */}
+     
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#EA6E54] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
         <div className="absolute top-3/4 right-1/4 w-64 h-64 bg-[#F3A183] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
