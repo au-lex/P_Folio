@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { GoDotFill } from "react-icons/go";
 import { FaLinkedin, FaTwitter, FaInstagram, FaGithub, FaEnvelope, FaPaperPlane } from "react-icons/fa";
+import emailjs from 'emailjs-com';
+import Modal from "./Modal";
 
 const socialLinks = [
   { href: "https://www.linkedin.com/in/boniface-ifebuche-aulex-467a74247/", icon: <FaLinkedin />, label: "LinkedIn" },
@@ -25,19 +27,44 @@ const Footer = () => {
     message: ''
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', message: '' });
+    setIsLoading(true);
+
+    emailjs.sendForm(
+      'service_oqyie5k',
+      'template_45ye9i1',
+      e.target,
+      '4TaXyPnuVdxuAeg43'
+    )
+    .then((result) => {
+      console.log('Email sent:', result.text);
+      setModalMessage('Message sent successfully!');
+      setShowModal(true);
+      setIsLoading(false);
+      setFormData({ name: '', email: '', message: '' });
+    }, (error) => {
+      console.error('Email send error:', error.text);
+      setModalMessage('An error occurred. Please try again later.');
+      setShowModal(true);
+      setIsLoading(false);
+    });
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
-    <footer id='contact' className="bg-gradient-to-b from-[#121F28] to-[#1A2C3B]
-     text-white py-6 lg:py-16 px-4 md:px-6 lg:px-8 relative overflow-hidden">
+    <footer id='contact' className="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-16 px-4 md:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative lg:pt-10 z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* About Section */}
@@ -59,7 +86,7 @@ const Footer = () => {
               Quick Links
               <span className="absolute bottom-0 left-0 w-12 h-1 bg-[#EA6E54]"></span>
             </h3>
-            <ul>
+            <ul className=''>
               {quickLinks.map((link, index) => (
                 <li key={index} className="mb-3">
                   <a href={link.href} className="text-gray-300 hover:text-[#EA6E54] transition-colors duration-300 flex items-center">
@@ -110,8 +137,9 @@ const Footer = () => {
                   required
                 ></textarea>
               </div>
+              {/* submit button */}
               <button type="submit" className="bg-gradient-to-r from-[#EA6E54] to-[#F3A183] text-white px-6 py-3 rounded-lg w-full hover:from-[#F3A183] hover:to-[#EA6E54] transition-all duration-300 flex items-center justify-center group">
-                <span className="mr-2">Send Message</span>
+                <span className="mr-2">{isLoading ? "Loading..." : "Send Message"}</span>
                 <FaPaperPlane className="transform group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </form>
@@ -149,8 +177,15 @@ const Footer = () => {
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#EA6E54] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
         <div className="absolute top-3/4 right-1/4 w-64 h-64 bg-[#F3A183] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
       </div>
+
+      {/* Modal Component */}
+      <Modal 
+        isOpen={showModal} 
+        onClose={closeModal} 
+        message={modalMessage}
+      />
     </footer>
   );
-}
+};
 
 export default Footer;

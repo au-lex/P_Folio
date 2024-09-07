@@ -2,7 +2,7 @@
 
 
 * {
-  scroll-padding-top: 1rem;
+  scroll-margin-top: 1rem;
   scroll-behavior: smooth;
   /* overflow-x: hidden; */
 }

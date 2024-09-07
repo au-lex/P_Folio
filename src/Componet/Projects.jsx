@@ -72,7 +72,7 @@ const Projects = () => {
   };
 
   return (
-    <section id='projects' className=" py-6 lg:py-20 bg-gradient-to-b from-white to-gray-100">
+    <section id='projects' className=" py-12 lg:py-20 bg-gradient-to-b from-white to-gray-100">
       <div className="container mx-auto px-4 lg:px-[4rem]">
         <motion.h2
           initial={{ y: -20, opacity: 0 }}
