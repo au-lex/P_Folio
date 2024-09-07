@@ -36,8 +36,9 @@ const Footer = () => {
   };
 
   return (
-    <footer id='contact' className="bg-gradient-to-b from-[#121F28] to-[#1A2C3B] text-white py-16 px-4 md:px-6 lg:px-8 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10">
+    <footer id='contact' className="bg-gradient-to-b from-[#121F28] to-[#1A2C3B]
+     text-white py-6 lg:py-16 px-4 md:px-6 lg:px-8 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative lg:pt-10 z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* About Section */}
           <div className="relative">
