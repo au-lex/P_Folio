@@ -10,7 +10,7 @@
     {
       title: "Project 2",
       description: "Description of Project 2. Highlight the key features  and technologies used.",
-      tags: ["Vue.js", "Firebase", "Tailwind CSS"],
+      tags: ["Vue.js", "Firebase", "Tailwind CSS", "React", "Node.js", "MongoDB",],
       github: "https://github.com/your-profile/project2",
       live: "https://project2-demo.com",
       image: "https://res.cloudinary.com/durbee4ln/image/upload/v1722517390/portifilo/scrnli_8_1_2024_1-57-26_PM_ikctov.png"

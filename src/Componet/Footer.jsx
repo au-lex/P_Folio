@@ -11,11 +11,11 @@ const socialLinks = [
 ];
 
 const quickLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Portfolio", href: "/portfolio" },
-  { name: "Contact", href: "/contact" }
+  { name: "Home", href: "#" },
+  { name: "About", href: "#about" },
+  { name: "Skill", href: "#skill" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" }
 ];
 
 const Footer = () => {
