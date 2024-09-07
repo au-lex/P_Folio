@@ -31,7 +31,7 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="max-w-6xl mx-auto  lg:pt-0 pt-[5rem]">
+      <div className="md:max-w-6xl mx-auto  plg:x-[5rem] lg:pt-0 pt-[5rem]">
         <div className="flex flex-col lg:flex-row items-center lg:h-[30rem] justify-between">
           <div className="w-full lg:w-1/2 mb-12 lg:mb-0">
             <h1 className='text-white text-center lg:text-left text-base sm:text-lg flex justify-center lg:justify-start items-center'>

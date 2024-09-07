@@ -18,6 +18,13 @@ body {
 }
 
 
+.hf {
+  background-color: rgba(255, 255, 255, 0.4);
+  /* filter: blur(10px); */
+}
+
+
+
 .dot-spinner {
   --uib-size: 2.8rem;
   --uib-speed: .9s;

@@ -1,26 +1,23 @@
-
-
-
-
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-
-import  { projects } from './ProjectList';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
+import { projects } from './ProjectList';
 
 const Loader = () => (
-  <div className="flex justify-center items-center h-64">
+  <motion.div 
+    className="flex justify-center items-center h-64"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+  >
     <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#EA6E54]"></div>
-  </div>
+  </motion.div>
 );
 
 const Projects = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
   const projectsPerPage = 4;
 
   const indexOfLastProject = currentPage * projectsPerPage;
@@ -34,105 +31,184 @@ const Projects = () => {
     setTimeout(() => {
       setCurrentPage(pageNumber);
       setLoading(false);
-    }, 500); // Simulating a 500ms load time
+    }, 500);
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const projectVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 100
+      }
+    }
   };
 
   return (
-    <section id='projects' className="py-20 bg-white">
+    <section id='projects' className="py-20 bg-gradient-to-b from-white to-gray-100">
       <div className="container mx-auto px-4 lg:px-[4rem]">
-      <h2 className="text-3xl font-bold mb-2">My Projects</h2>
-{/* <p className="text-gray-600 mb-4">Here are some of the projects I've worked on. Hover to learn more!</p> */}
-
-<p className="text-gray-700 text-sm mb-4">Explore my diverse projects, showcasing various skills and interests. Each project highlights my growth and passion for technology. Feel free to reach out if you’d like to discuss them further!</p>
-
+        <motion.h2
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold mb-2 text-center text-[#EA6E54]"
+        >
+          My Creative Journey
+        </motion.h2>
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-gray-700 text-center mb-8 max-w-2xl mx-auto"
+        >
+          Explore my diverse portfolio, showcasing a fusion of innovation and problem-solving. Each project tells a unique story of challenges conquered and skills mastered. Dive in and discover the technologies that drive my passion!
+        </motion.p>
         
-        {loading ? (
-          <Loader />
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {currentProjects.map((project, index) => (
-              <div key={index} className="bg-white p-2 border border-[#EA6E54] h-[14rem] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <section className="flex w-full justify-between h-full">
-                  <figure className="projectImg w-[40%] border border-[#EA6E54] rounded-md mr-2 h-full">
-                    <img src={project.image} alt={project.title}
-                      className="w-full h-full rounded-md object-cover" />
-                  </figure>
-                  <div className="w-[60%] flex flex-col overflow-hidden">
-                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-gray-600 mb-4 text-[12px] ov">{project.description}</p>
-                    <div className="flex items-center space-x-4 mt-2 mb-2">
-                      <a 
-                        href={project.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="relative group"
-                        aria-label="View GitHub Repository"
-                      >
-                        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#EA6E54] to-[#F3A183] rounded-full opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
-                        <div className="relative flex items-center justify-center h-8 w-8 bg-white rounded-full border-2 border-[#EA6E54] transition-all duration-300 ease-in-out group-hover:rotate-6 group-hover:scale-110">
-                          <FaGithub size={20} className="text-[#EA6E54] group-hover:text-[#121F28]" />
-                        </div>
-                        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 bg-[#121F28] text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                          GitHub
-                        </span>
-                      </a>
-                      <a 
-                        href={project.live} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="relative group"
-                        aria-label="View Live Demo"
-                      >
-                        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#EA6E54] to-[#F3A183] rounded-full opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
-                        <div className="relative flex items-center justify-center h-8 w-8 bg-white rounded-full border-2 border-[#EA6E54] transition-all duration-300 ease-in-out group-hover:-rotate-6 group-hover:scale-110">
-                          <FaExternalLinkAlt size={16} className="text-[#EA6E54] group-hover:text-[#121F28]" />
-                        </div>
-                        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 bg-[#121F28] text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                          Live Demo
-                        </span>
-                      </a>
-                    </div>
-                    <div className="flex flex-wrp overflow-x-auto whitespace-nowrap gap-1 justify-start mt-auto">
-                      {project.tags.map((tag, tagIndex) => (
-                        <span key={tagIndex} className="text-xs bg-[#EA6E54] text-white px-2 py-1 rounded">{tag}</span>
-                      ))}
+        <AnimatePresence mode="wait">
+          {loading ? (
+            <Loader key="loader" />
+          ) : (
+            <motion.div
+              key="projects"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            >
+              {currentProjects.map((project, index) => (
+                <motion.div
+                  key={index}
+                  variants={projectVariants}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setSelectedProject(project)}
+                  className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden transform hover:-rotate-1"
+                >
+                  <div className="relative h-48 mb-4 overflow-hidden rounded-md">
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" />
+                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-white font-bold">Click to view details</span>
                     </div>
                   </div>
-                </section>
-              </div>
-            ))}
-          </div>
-        )}
+                  <h3 className="text-xl font-bold mb-2 text-[#EA6E54]">{project.title}</h3>
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.tags.slice(0, 3).map((tag, tagIndex) => (
+                      <span key={tagIndex} className="text-xs bg-[#EA6E54] text-white px-2 py-1 rounded-full">{tag}</span>
+                    ))}
+                    {project.tags.length > 3 && (
+                      <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">+{project.tags.length - 3}</span>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
         
         {/* Pagination controls */}
         <div className="flex justify-center space-x-4 mt-8">
-          <button 
+          <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => paginate(currentPage - 1)} 
             disabled={currentPage === 1 || loading}
-            className="mx-1 px-3 py-2 flex justify-center items-center rounded-full h-[2rem] w-[2rem] bg-[#EA6E54] text-gray-100  disabled:opacity-50"
+            className="mx-1 px-3 py-2 flex justify-center items-center rounded-full h-10 w-10 bg-[#EA6E54] text-white disabled:opacity-50 transition-all duration-300 hover:bg-[#F3A183]"
           >
             <FaChevronLeft />
-          </button>
+          </motion.button>
           {[...Array(totalPages)].map((_, i) => (
-            <button
+            <motion.button
               key={i}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               onClick={() => paginate(i + 1)}
               disabled={loading}
-              className={`mx-1 px-3 py-2 flex justify-center items-center rounded-full h-[2rem] w-[2rem] ${
+              className={`mx-1 px-3 py-2 flex justify-center items-center rounded-full h-10 w-10 ${
                 currentPage === i + 1 ? 'bg-[#EA6E54] text-white' : 'bg-gray-200 text-gray-700'
-              } ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              } ${loading ? 'opacity-50 cursor-not-allowed' : ''} transition-all duration-300 hover:bg-[#F3A183] hover:text-white`}
             >
               {i + 1}
-            </button>
+            </motion.button>
           ))}
-          <button 
+          <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => paginate(currentPage + 1)} 
             disabled={currentPage === totalPages || loading}
-            className="mx-1 px-3 py-2 flex justify-center items-center rounded-full h-[2rem] w-[2rem] bg-[#EA6E54] text-gray-100  disabled:opacity-50"
+            className="mx-1 px-3 py-2 flex justify-center items-center rounded-full h-10 w-10 bg-[#EA6E54] text-white disabled:opacity-50 transition-all duration-300 hover:bg-[#F3A183]"
           >
             <FaChevronRight />
-          </button>
+          </motion.button>
         </div>
+
+        {/* Project Details Modal */}
+        <AnimatePresence>
+          {selectedProject && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+              onClick={() => setSelectedProject(null)}
+            >
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 50, opacity: 0 }}
+                className="bg-white p-8 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-2xl font-bold text-[#EA6E54]">{selectedProject.title}</h3>
+                  <button onClick={() => setSelectedProject(null)} className="text-gray-500 hover:text-[#EA6E54]">
+                    <FaTimes size={24} />
+                  </button>
+                </div>
+                <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-64 object-cover rounded-lg mb-4" />
+                <p className="text-gray-600 mb-4">{selectedProject.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {selectedProject.tags.map((tag, tagIndex) => (
+                    <span key={tagIndex} className="text-xs bg-[#EA6E54] text-white px-2 py-1 rounded-full">{tag}</span>
+                  ))}
+                </div>
+                <div className="flex space-x-4">
+                  <a 
+                    href={selectedProject.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center space-x-2 bg-[#EA6E54] text-white px-4 py-2 rounded-full hover:bg-[#F3A183] transition-colors duration-300"
+                  >
+                    <FaGithub />
+                    <span>GitHub</span>
+                  </a>
+                  <a 
+                    href={selectedProject.live} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center space-x-2 bg-[#EA6E54] text-white px-4 py-2 rounded-full hover:bg-[#F3A183] transition-colors duration-300"
+                  >
+                    <FaExternalLinkAlt />
+                    <span>Live Demo</span>
+                  </a>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
