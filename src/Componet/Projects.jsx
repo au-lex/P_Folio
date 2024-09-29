@@ -5,8 +5,8 @@ import { projects } from './ProjectList';
 
 const Loader = () => (
 
-  
-  <motion.div 
+
+  <motion.div
     className="flex justify-center items-center h-64"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -37,12 +37,12 @@ const Projects = () => {
   };
 
   useEffect(() => {
-   
+
     if (selectedProject) {
       document.body.style.overflow = 'hidden';
     }
 
-    
+
     return () => {
       document.body.style.overflow = '';
     };
@@ -90,7 +90,7 @@ const Projects = () => {
         >
           Explore my diverse portfolio, showcasing a fusion of innovation and problem-solving. Each project tells a unique story of challenges conquered and skills mastered. Dive in and discover the technologies that drive my passion!
         </motion.p>
-        
+
         <AnimatePresence mode="wait">
           {loading ? (
             <Loader key="loader" />
@@ -113,7 +113,7 @@ const Projects = () => {
                   className="bg-white p-4 rounded-lg shadow-lg border border-[#EA6E54] hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden transform hover:-rotate-1"
                 >
                   <div className="relative h-48 mb-4 overflow-hidden border rounded-md">
-                    <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" />
+                    <img src={project.image} alt={project.title} className="w-full h-[200px] object-cover transition-transform duration-300 transform hover:scale-110" />
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                       <span className="text-white font-bold">Click to view details</span>
                     </div>
@@ -133,13 +133,13 @@ const Projects = () => {
             </motion.div>
           )}
         </AnimatePresence>
-        
+
         {/* Pagination controls */}
         <div className="flex justify-center space-x-4 mt-8">
-          <motion.button 
+          <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            onClick={() => paginate(currentPage - 1)} 
+            onClick={() => paginate(currentPage - 1)}
             disabled={currentPage === 1 || loading}
             className="mx-1 px-3 py-2 flex justify-center items-center rounded-full h-10 w-10 bg-[#EA6E54] text-white disabled:opacity-50 transition-all duration-300 hover:bg-[#F3A183]"
           >
@@ -152,17 +152,16 @@ const Projects = () => {
               whileTap={{ scale: 0.9 }}
               onClick={() => paginate(i + 1)}
               disabled={loading}
-              className={`mx-1 px-3 py-2 flex justify-center items-center rounded-full h-10 w-10 ${
-                currentPage === i + 1 ? 'bg-[#EA6E54] text-white' : 'bg-gray-200 text-gray-700'
-              } ${loading ? 'opacity-50 cursor-not-allowed' : ''} transition-all duration-300 hover:bg-[#F3A183] hover:text-white`}
+              className={`mx-1 px-3 py-2 flex justify-center items-center rounded-full h-10 w-10 ${currentPage === i + 1 ? 'bg-[#EA6E54] text-white' : 'bg-gray-200 text-gray-700'
+                } ${loading ? 'opacity-50 cursor-not-allowed' : ''} transition-all duration-300 hover:bg-[#F3A183] hover:text-white`}
             >
               {i + 1}
             </motion.button>
           ))}
-          <motion.button 
+          <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            onClick={() => paginate(currentPage + 1)} 
+            onClick={() => paginate(currentPage + 1)}
             disabled={currentPage === totalPages || loading}
             className="mx-1 px-3 py-2 flex justify-center items-center rounded-full h-10 w-10 bg-[#EA6E54] text-white disabled:opacity-50 transition-all duration-300 hover:bg-[#F3A183]"
           >
@@ -201,19 +200,19 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex space-x-4">
-                  <a 
-                    href={selectedProject.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center space-x-2 bg-[#EA6E54] text-white px-4 py-2 rounded-full hover:bg-[#F3A183] transition-colors duration-300"
                   >
                     <FaGithub />
                     <span>GitHub</span>
                   </a>
-                  <a 
-                    href={selectedProject.live} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={selectedProject.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center space-x-2 bg-[#EA6E54] text-white px-4 py-2 rounded-full hover:bg-[#F3A183] transition-colors duration-300"
                   >
                     <FaExternalLinkAlt />
