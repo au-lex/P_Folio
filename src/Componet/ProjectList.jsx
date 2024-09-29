@@ -1,12 +1,14 @@
   export  const  projects = [
+
     {
-      title: "ConnecPro",
-      description: "ConnecPro is a web application designed to bridge the gap between job seekers and clients, offering a platform where both parties can seamlessly interact and access a variety of professional services. The platform provides job seekers with the ability to browse job listings, create profiles, and apply for jobs, while clients can post job opportunities, view profiles, and connect with potential candidates. Additionally, ConnecPro offers a range of services, such as resume reviews, portfolio creation, and career coaching, making it a comprehensive solution for both job seekers and employers.",
-      tags: ["React", "Express.js", "MongoDB", "tailwind", "Redux", "Firebase"],
+      title: "Waveserve",
+      description: "WaveServe is a dynamic platform designed to connect taskers—those offering various services—and seekers—individuals or businesses in need of those services. The app aims to simplify the job-finding process by providing a space where users can easily discover and connect with qualified taskers across a range of industries.",
+      tags: [ "Nextjs", "Tailwindcss", "SEO","Frame Motion" ],
       github: "https://github.com/au-lex",
-      live: "https://connect-pro-beta.vercel.app/",
-      image: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1725768587/acc4c370-8d08-4662-b528-4497741a095f.png"
+      live: "https://wave-serve.vercel.app/",
+      image: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1727595617/912061d2-c7cb-4f9f-9ced-5409d97fe728.png"
     },
+
     {
       title: "GetAuTech",
       description: "The GetAuTech is an e-commerce platform specifically designed for tech enthusiasts, professionals, and hobbyists. It offers a wide range of ICT gadgets and accessories, ensuring that techies have access to the latest products and technologies in the market. The platform is focused on delivering high-quality gadgets, including laptops, monitors, speakers, keyboards, networking tools, and other essential tech gear.",
@@ -39,6 +41,15 @@
       live: "https://joombow-web-application.vercel.app/",
       image: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1725769005/55b34732-1170-4ba0-852b-f0b5c2bbaa19.png"
     },
+
+    {
+      title: "ConnecPro",
+      description: "ConnecPro is a web application designed to bridge the gap between job seekers and clients, offering a platform where both parties can seamlessly interact and access a variety of professional services. The platform provides job seekers with the ability to browse job listings, create profiles, and apply for jobs, while clients can post job opportunities, view profiles, and connect with potential candidates. Additionally, ConnecPro offers a range of services, such as resume reviews, portfolio creation, and career coaching, making it a comprehensive solution for both job seekers and employers.",
+      tags: ["React", "Express.js", "MongoDB", "tailwind", "Redux", "Firebase"],
+      github: "https://github.com/au-lex",
+      live: "https://connect-pro-beta.vercel.app/",
+      image: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1725768587/acc4c370-8d08-4662-b528-4497741a095f.png"
+    },
     {
       title: "GYMMIE",
       description: "GYMMIE is a comprehensive fitness platform designed to empower users on their wellness journey. It provides a space for individuals to exercise, track their workouts, and purchase gym equipment and accessories—all in one convenient app. Whether users are looking to follow guided workouts, explore exercise routines, or invest in quality gym gear, GYMMIE caters to all their fitness needs.",
@@ -55,6 +66,16 @@
       live: "https://sneakers-oi.vercel.app/",
       image: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1725768878/33cc5ff5-9979-4c82-9b28-12e091d6211c.png"
     },
+
+    {
+      title: "Birthday POP ",
+      description: "Birthday POP is a simple and fun app that helps users track the number of days remaining until their next birthday. Whether users are eagerly waiting for their special day or want to keep track of upcoming birthdays for friends and family, the app provides a countdown that adds excitement and anticipation.",
+      tags: ["JavaScript", "html", "Css", "Canvas"],
+      github: "https://github.com/au-lex",
+      live: "https://bithday-pop.vercel.app/",
+      image: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1727616897/453837a1-8a71-4cbf-9c3e-3fece4e08dfc.png"
+    }, 
+    
     {
       title: "Project 8",
       description: "An AI-powered chatbot for customer service automation.",
@@ -63,20 +84,14 @@
       live: "https://project8-demo.com",
       image: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1725769134/4971e096-66f9-497b-8979-897cbe9d03f5.png"
     },
+    
     {
       title: "Project 9",
       description: "A real-time multiplayer game using WebSocket technology.",
       tags: ["JavaScript", "Socket.io", "Canvas API"],
-      github: "https://github.com/your-profile/project9",
-      live: "https://project9-demo.com",
-      image: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1725768480/7d7f269c-89c3-4d1e-9a99-11ee3f5b07c8.png"
+      // github: "https://github.com/au-lex",
+      // live: "https://bithday-pop.vercel.app/",
+      // image: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1727616897/453837a1-8a71-4cbf-9c3e-3fece4e08dfc.png"
     },
-    {
-      title: "Project 10",
-      description: "An IoT home automation system with mobile app control.",
-      tags: ["Raspberry Pi", "Python", "React Native"],
-      github: "https://github.com/your-profile/project10",
-      live: "https://project10-demo.com",
-      image: "https://res.cloudinary.com/durbee4ln/image/upload/v1722517390/portifilo/scrnli_8_1_2024_1-58-58_PM_tdr2uv.png"
-    }
+
   ];
