@@ -131,7 +131,7 @@ const AboutMe = () => {
           <div className="w-full md:w-[70%]">
             <p className="mb-8 text-lg lg:text-center leading-relaxed">
               Hello! I'm Aulex, a passionate software developer with a keen interest in creating
-              efficient and user-friendly applications. With over 2 years of experience in the field,
+              efficient and user-friendly applications. With over 7+ years of experience in the field,
               I specialize in full-stack development, focusing on modern web technologies.
             </p>
        
